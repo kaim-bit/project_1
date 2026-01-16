@@ -2,7 +2,7 @@
 let overlap
 let counter = 0
 let radius = 75
-let flib = 100
+
 const s1 = {
     x: 100,
     y: 100,
@@ -11,7 +11,7 @@ const s1 = {
     r: 255,
     g: 130,
     b: 0
-}
+};
 const s2 = {
     x: 200,
     y: 100,
@@ -19,41 +19,41 @@ const s2 = {
     r: 255,
     g: 90,
     b: 0
-}
+};
+const c = {
+    x: 0,
+    y: 0
+
+};
 
 function setup() {
     createCanvas(1000, 1000)
     console.log("go")
-
+    c.x = width / 2
+    c.y = height / 2
 }
 
 function draw() {
     background(100)
+    let i = 0
+    while (i < counter) {
+        drawCircle()
+        i++;
+    }
 
 
     checkCollisionWithSquare()
 
     if (overlap) {
-        s1.g = 150
+        s1.g = 190
     }
     else {
         s1.g = 130
     }
-    // background("black")
+
     noFill()
     stroke("green")
     strokeWeight(2)
-
-    for (let circles = 0; circles < 10; circles++) {
-        if (counter < 10) {
-
-            fill(0, 0, 0, flib)
-            ellipse(width / 2, height / 2, counter * 10 + radius)
-
-        }
-    }
-
-
 
     console.log(counter)
 
@@ -86,4 +86,9 @@ function mousePressed() {
 
     if (overlap)
         counter += 1
+}
+function drawCircle() {
+    push();
+    ellipse(c.x, c.y, c.s)
+    pop();
 }
