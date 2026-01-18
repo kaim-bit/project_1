@@ -1,7 +1,7 @@
 "use strict";
 let overlap
 let counter = 0
-let radius = 75
+
 
 const s1 = {
     x: 100,
@@ -36,9 +36,16 @@ function setup() {
 function draw() {
     background(100)
     let i = 0
+    let radius = 50
+    let a = 10
     while (i < counter) {
-        drawCircle()
+        push();
+        fill(255, 255, 255, a);
+        ellipse(c.x, c.y, radius);
+        pop();
         i++;
+        a += 10
+        radius += 50
     }
 
 
@@ -51,26 +58,22 @@ function draw() {
         s1.g = 130
     }
 
-    noFill()
-    stroke("green")
-    strokeWeight(2)
+    noFill();
+
+    strokeWeight(1);
 
     console.log(counter)
 
-    push()
-    noStroke()
-    fill(100, 100, 100)
-    ellipse(width / 2, height / 2, radius)
-    pop()
+
 
     displaySquare()
 }
 
 function displaySquare() {
     push()
-    noStroke()
-    fill(s1.r, s1.g, s1.b)
-    rect(s1.x, s1.y, s1.w, s1.h)
+    noStroke();
+    fill(s1.r, s1.g, s1.b);
+    rect(s1.x, s1.y, s1.w, s1.h);
     pop()
 }
 
@@ -82,13 +85,8 @@ function checkCollisionWithSquare() {
 }
 
 function mousePressed() {
-    flib -= 20
 
-    if (overlap)
+
+    if (overlap && counter < 10)
         counter += 1
-}
-function drawCircle() {
-    push();
-    ellipse(c.x, c.y, c.s)
-    pop();
 }
