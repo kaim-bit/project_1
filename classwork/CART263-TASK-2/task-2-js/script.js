@@ -312,8 +312,14 @@ function setup() {
 
     /***CODE */
     function customNewBoxCreate(parent) {
+        let newDiv = document.createElement('div')
+
+        newDiv.classList.add('testDiv')
+        parent.appendChild(newDiv);
+        return newDiv;
 
     }
+
 
     /***EXPLANATION::
      * 
