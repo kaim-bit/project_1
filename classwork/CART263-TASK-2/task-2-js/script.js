@@ -272,18 +272,22 @@ function setup() {
     /* 1G: Append this new element to the parent variable within the function. */
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
     passing the current allPTagsThree element as the parent with each iteration.*/
-    /***CODE */
-    function customCreateElement(parent) {
-        let newElement = document.createElement('p')
-        newElement.innerHTML = "using Create Element"
-        newElement.style.background = "green"
-        newElement.style.color = "white"
-        parent.appendChild(newElement)
-    }
+    // /***CODE */
+    // function customCreateElement(parent) {
+    //     let newElement = document.createElement('p')
+    //     newElement.innerHTML = "using Create Element"
+    //     newElement.style.background = "green"
+    //     newElement.style.color = "white"
+    //     parent.appendChild(newElement)
+    // }
+    // for (let i = 0; i < allPTagsThree.length; i++) {
+    //     customCreateElement(allPTagsThree[i]);
+    // }
 
     /***EXPLANATION::
      * 
-     * 
+     * first we select all the p elements, then we create new p which we then change the text, color and background.
+     * after that, the p's we made get put inside the parent so we can then loop through all of them, applying the changes.
      */
 
     /*************************************** */
@@ -307,7 +311,9 @@ function setup() {
         otherwise lat it have the content `ODD`.*/
 
     /***CODE */
+    function customNewBoxCreate(parent) {
 
+    }
 
     /***EXPLANATION::
      * 
